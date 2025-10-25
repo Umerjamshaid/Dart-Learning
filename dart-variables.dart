@@ -11,7 +11,7 @@ int year = 2024;
 
 // dynamic variable and what they can do:
 // dynamic variable can change type
-dynamic variable = "I am a string";
+// dynamic variable = "I am a string";
 //variable = 100; // now it's an integer
 //variable = true; // now it's a boolean
 //variable = 45.67; // now it's a double
@@ -136,15 +136,38 @@ dynamic variable = "I am a string";
 // >
 // > 🔴 `const` = The bowl and what’s inside are frozen forever.
 
-const pi = 3.14; // constant variable
-final currenttime = DateTime(year, 6, 20, 10, 30); // final variable
+// const pi = 3.14; // constant variable
+// final currenttime = DateTime(year, 6, 20, 10, 30); // final variable
 
 void main(List<String> args) {
   print(name);
   print(city);
   print(age);
   print(year);
-  print(variable);
-  print(pi);
+  // print(variable);
+  // print(pi);
+  // print(currenttime);
+
+  // revice
+  print(firstname);
+  print(lastname);
+  print(ages);
+  print(birthdate);
+  print(vari);
   print(currenttime);
+  print(pi);
 }
+
+var firstname = 'umer';
+
+String lastname = 'riaz';
+
+var ages = 20;
+
+int birthdate = 18;
+
+dynamic vari = 'i am a just a programmer';
+
+final currenttime = DateTime(year);
+
+const pi = 3.90;
