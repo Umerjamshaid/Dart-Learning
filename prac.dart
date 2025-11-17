@@ -1,4 +1,8 @@
+import 'dart:ffi';
 import 'dart:io';
+
+import 'dart-variables.dart';
+import 'umer.dart';
 
 void main() {
   // ⚙️ LEVEL 1 — Logic & Loops (Basics)
@@ -69,31 +73,116 @@ void main() {
   // Ask the user for two numbers and an operation (+, -, *, /).
   // Use if/else logic to perform it and print the result.
 
-  print("Enter Two numbers and your opration");
+  // print("Enter Two numbers and your opration");
 
-  String? input1 = stdin.readLineSync();
-  int num1 = int.parse(input1!);
+  // String? input1 = stdin.readLineSync();
+  // int num1 = int.parse(input1!);
 
-  String? input2 = stdin.readLineSync();
-  int num2 = int.parse(input2!);
+  // String? input2 = stdin.readLineSync();
+  // int num2 = int.parse(input2!);
 
-  String? operation = stdin.readLineSync();
-  int result = 0;
+  // String? operation = stdin.readLineSync();
+  // int result = 0;
 
-  if (operation == "+") {
-    result = num1 + num2;
-  } else if (operation == "-") {
-    result = num1 - num2;
-  } else if (operation == "*") {
-    result = num1 * num2;
-  } else if (operation == "/") {
-    if (num2 == 0) {
-      print("Cannot divide by zero!");
-    }
-    result = num1 ~/ num2;
-  } else {
-    print("Invalid operation. Please use +, -, *, or /");
-    return;
+  // if (operation == "+") {
+  //   result = num1 + num2;
+  // } else if (operation == "-") {
+  //   result = num1 - num2;
+  // } else if (operation == "*") {
+  //   result = num1 * num2;
+  // } else if (operation == "/") {
+  //   if (num2 == 0) {
+  //     print("Cannot divide by zero!");
+  //   }
+  //   result = num1 ~/ num2;
+  // } else {
+  //   print("Invalid operation. Please use +, -, *, or /");
+  //   return;
+  // }
+  // print("the result is $result");
+
+  // Source - https://stackoverflow.com/questions/21521729/how-do-i-reverse-a-string-in-dart
+  // Posted by Florian Loitsch
+  // Retrieved 2025-11-06, License - CC BY-SA 3.0
+
+  // one way to reverse a word or some
+  // var input = '12314432'; // Amélie
+  // print(new String.fromCharCodes(input.runes.toList().reversed)); // eiĺemA
+
+  // doing it with loops
+
+  // 1. Ask the user for a word
+  //   stdout.write("Enter the Reversed word ");
+  //   String? orginalWord = stdin.readLineSync();
+
+  //   //Handle the null or empty press matter:
+  //   if (orginalWord == null || orginalWord.isEmpty) {
+  //     print("Nothing Was Submitted");
+  //     return;
+  //   }
+
+  //   String reversedWord = reverseWithLoop(orginalWord);
+
+  //   print("Orignal Word $orginalWord");
+  //   print("Reversed Word $reversedWord");
+
+  //   myfunc();
+  // }
+
+  // String reverseWithLoop(String word) {
+  //   String reversed = "";
+  //   int length = word.length;
+
+  //   for (int i = length - 1; i >= 0; i--) {
+  //     reversed += word[i];
+  //   }
+  //   return reversed;
+
+  // -----------------------------------------------------------
+  // 🧠 LEVEL 2 — Lists, Maps, and Loops Combined
+
+  // Student Marks Manager
+
+  // Take 3 students’ names and marks (store in a map).
+
+  // Use a loop to print each student's name and mark.
+
+  // Calculate and print the average.
+
+  // If any student scored < 40 → print "Failed".
+
+  var student = {"Umer": 30, "Usman": 50, "ali": 30};
+
+  int total = 0;
+
+  for (var entry in student.entries) {
+    print('${entry.key}: ${entry.value}');
+    total += entry.value; // sum marks
   }
-  print("the result is $result");
+
+  double avarage = total / student.length;
+  print("\nAverage Marks: ${avarage.toStringAsFixed(2)}");
+
+  print("\nResults");
+
+  for (var entry in student.entries) {
+    if (entry.value < 40) {
+      print('${entry.value} → Failed');
+    } else {
+      print('${entry.key} → passed');
+    }
+  }
 }
+
+// void myfunc() {
+//   stdout.write("Enter here");
+//   String? orignalword = stdin.readLineSync();
+
+//   if (orignalword == null || orignalword.isEmpty) {
+//     print("Pls Enter the word !!");
+//     return;
+//   }
+
+//   print("Enter orignal word $orignalword");
+//   print("Enter reversed word ");
+// }
